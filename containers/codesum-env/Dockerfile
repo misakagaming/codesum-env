@@ -6,7 +6,7 @@ FROM aaii/cuda:9.2-cudnn7-devel-ubuntu18.04
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 # Python Version x.y
-ARG PYTHON_VERSION=3.7
+ARG PYTHON_VERSION=3.6
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
@@ -62,8 +62,9 @@ RUN python2.7 -m pip install -U virtualenv
 
 RUN python2.7 -m virtualenv --system-site-packages temp-python
 
-	
-RUN /opt/python/venv/base/bin/python -m pip install -r /opt/python/venv/base/requirements.txt
+
+RUN /opt/python/venv/base/bin/python -m pip install --upgrade pip
+#RUN /opt/python/venv/base/bin/python -m pip install -r /opt/python/venv/base/requirements.txt
 
 
 
