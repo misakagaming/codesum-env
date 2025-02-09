@@ -6,7 +6,7 @@ FROM aaii/cuda:9.2-cudnn7-devel-ubuntu18.04
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 # Python Version x.y
-ARG PYTHON_VERSION=3.6
+ARG PYTHON_VERSION=3.8
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
