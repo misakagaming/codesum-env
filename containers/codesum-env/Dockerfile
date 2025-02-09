@@ -40,9 +40,10 @@ RUN python3 -m virtualenv --help
 
 
 
+
 #RUN python3.6 -m pip install --upgrade Pillow
 
-
+RUN ln -sf $(which python$PYTHON_VERSION) /usr/bin/python
 
 RUN python -m pip install --upgrade pip \
     && python -m venv --system-site-packages /opt/python/venv/base
