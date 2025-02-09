@@ -1,0 +1,123 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 13 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: models.py
+--------------------------------------------------------------------------------
+models.py:25:26: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+models.py:127:30: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+models.py:258:16: WARNING: tf.contrib.layers.layer_norm requires manual check. (Manual edit required) `tf.contrib.layers.layer_norm` has been deprecated, and its implementation has been integrated with `tf.keras.layers.LayerNormalization` in TensorFlow 2.0. Note that, the default value of `epsilon` is changed to `1e-3` in the new API from `1e-12`, and this may introduce numerical differences. Please check the new API and use that instead.
+models.py:258:16: ERROR: Using member tf.contrib.layers.layer_norm in deprecated module tf.contrib. tf.contrib.layers.layer_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+models.py:259:21: WARNING: tf.contrib.layers.layer_norm requires manual check. (Manual edit required) `tf.contrib.layers.layer_norm` has been deprecated, and its implementation has been integrated with `tf.keras.layers.LayerNormalization` in TensorFlow 2.0. Note that, the default value of `epsilon` is changed to `1e-3` in the new API from `1e-12`, and this may introduce numerical differences. Please check the new API and use that instead.
+models.py:259:21: ERROR: Using member tf.contrib.layers.layer_norm in deprecated module tf.contrib. tf.contrib.layers.layer_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+models.py:514:25: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+models.py:627:26: WARNING: tf.contrib.layers.layer_norm requires manual check. (Manual edit required) `tf.contrib.layers.layer_norm` has been deprecated, and its implementation has been integrated with `tf.keras.layers.LayerNormalization` in TensorFlow 2.0. Note that, the default value of `epsilon` is changed to `1e-3` in the new API from `1e-12`, and this may introduce numerical differences. Please check the new API and use that instead.
+models.py:627:26: ERROR: Using member tf.contrib.layers.layer_norm in deprecated module tf.contrib. tf.contrib.layers.layer_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+models.py:667:28: WARNING: tf.contrib.layers.layer_norm requires manual check. (Manual edit required) `tf.contrib.layers.layer_norm` has been deprecated, and its implementation has been integrated with `tf.keras.layers.LayerNormalization` in TensorFlow 2.0. Note that, the default value of `epsilon` is changed to `1e-3` in the new API from `1e-12`, and this may introduce numerical differences. Please check the new API and use that instead.
+models.py:667:28: ERROR: Using member tf.contrib.layers.layer_norm in deprecated module tf.contrib. tf.contrib.layers.layer_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+models.py:918:12: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+models.py:919:12: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'models.py'
+ outputting to 'C:\\Users\\HP\\Desktop\\TL-CodeSum-master-env\\containers\\codesum-env\\models.py'
+--------------------------------------------------------------------------------
+
+18:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+18:39: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+25:26: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+25:26: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+81:26: INFO: tf.random_uniform_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+81:26: INFO: Renamed 'tf.random_uniform_initializer' to 'tf.compat.v1.random_uniform_initializer'
+98:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+127:30: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+136:34: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+141:34: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+154:42: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+187:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+187:39: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+204:63: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+245:16: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+247:17: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+258:16: WARNING: tf.contrib.layers.layer_norm requires manual check. (Manual edit required) `tf.contrib.layers.layer_norm` has been deprecated, and its implementation has been integrated with `tf.keras.layers.LayerNormalization` in TensorFlow 2.0. Note that, the default value of `epsilon` is changed to `1e-3` in the new API from `1e-12`, and this may introduce numerical differences. Please check the new API and use that instead.
+258:16: ERROR: Using member tf.contrib.layers.layer_norm in deprecated module tf.contrib. tf.contrib.layers.layer_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+259:21: WARNING: tf.contrib.layers.layer_norm requires manual check. (Manual edit required) `tf.contrib.layers.layer_norm` has been deprecated, and its implementation has been integrated with `tf.keras.layers.LayerNormalization` in TensorFlow 2.0. Note that, the default value of `epsilon` is changed to `1e-3` in the new API from `1e-12`, and this may introduce numerical differences. Please check the new API and use that instead.
+259:21: ERROR: Using member tf.contrib.layers.layer_norm in deprecated module tf.contrib. tf.contrib.layers.layer_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+280:11: INFO: Added keywords to args of function 'tf.nn.conv2d'
+280:11: INFO: Renamed keyword argument for tf.nn.conv2d from filter to filters
+301:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+314:38: INFO: Renamed keyword argument for tf.reduce_max from keep_dims to keepdims
+319:52: INFO: Renamed keyword argument for tf.reduce_sum from keep_dims to keepdims
+334:14: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+336:14: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+343:14: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+359:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+360:31: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+370:22: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+370:45: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+377:27: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+377:50: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+384:22: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+384:45: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+396:26: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+402:19: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+403:20: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+405:17: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+407:19: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+498:22: INFO: tf.random_uniform_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+498:22: INFO: Renamed 'tf.random_uniform_initializer' to 'tf.compat.v1.random_uniform_initializer'
+514:25: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+518:29: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+522:29: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+568:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+582:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+582:31: INFO: Renamed 'tf.get_variable_scope' to 'tf.compat.v1.get_variable_scope'
+590:24: INFO: Renamed 'tf.where' to 'tf.compat.v1.where'
+608:15: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+610:34: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+627:26: WARNING: tf.contrib.layers.layer_norm requires manual check. (Manual edit required) `tf.contrib.layers.layer_norm` has been deprecated, and its implementation has been integrated with `tf.keras.layers.LayerNormalization` in TensorFlow 2.0. Note that, the default value of `epsilon` is changed to `1e-3` in the new API from `1e-12`, and this may introduce numerical differences. Please check the new API and use that instead.
+627:26: ERROR: Using member tf.contrib.layers.layer_norm in deprecated module tf.contrib. tf.contrib.layers.layer_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+634:26: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+662:24: INFO: Changing keep_prob arg of tf.nn.dropout to rate
+
+664:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+667:28: WARNING: tf.contrib.layers.layer_norm requires manual check. (Manual edit required) `tf.contrib.layers.layer_norm` has been deprecated, and its implementation has been integrated with `tf.keras.layers.LayerNormalization` in TensorFlow 2.0. Note that, the default value of `epsilon` is changed to `1e-3` in the new API from `1e-12`, and this may introduce numerical differences. Please check the new API and use that instead.
+667:28: ERROR: Using member tf.contrib.layers.layer_norm in deprecated module tf.contrib. tf.contrib.layers.layer_norm cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+681:69: INFO: Changed tf.to_int64 call to tf.cast(..., dtype=tf.int64).
+697:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+714:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+726:21: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+740:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+748:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+757:37: INFO: Renamed 'tf.multinomial' to 'tf.random.categorical'
+757:52: INFO: Renamed 'tf.log' to 'tf.math.log'
+760:59: INFO: Renamed 'tf.random_uniform' to 'tf.random.uniform'
+784:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+818:40: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+853:36: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+918:12: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+918:12: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+919:12: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+919:12: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+950:59: INFO: Renamed keyword argument for tf.reduce_sum from keep_dims to keepdims
+974:22: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+980:23: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+983:14: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+983:43: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+--------------------------------------------------------------------------------
+
