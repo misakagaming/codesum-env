@@ -6,7 +6,7 @@ FROM nvidia/cuda:11.2.2-devel-ubuntu20.04
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 # Python Version x.y
-ARG PYTHON_VERSION=3.8
+ARG PYTHON_VERSION=3.6
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
@@ -58,8 +58,6 @@ RUN python2.7 get-pip.py
 RUN python2.7 -m pip install -U virtualenv
 
 RUN python2.7 -m virtualenv --system-site-packages temp-python
-
-RUN /opt/python/venv/base/bin/python -m pip install tensorflow==1.13.2
 	
 RUN /opt/python/venv/base/bin/python -m pip install -r /opt/python/venv/base/requirements.txt
 
