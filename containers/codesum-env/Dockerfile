@@ -64,7 +64,7 @@ RUN python2.7 -m virtualenv --system-site-packages temp-python
 
 
 RUN /opt/python/venv/base/bin/python -m pip install --upgrade pip
-#RUN /opt/python/venv/base/bin/python -m pip install -r /opt/python/venv/base/requirements.txt
+RUN /opt/python/venv/base/bin/python -m pip install -r /opt/python/venv/base/requirements.txt
 
 
 
