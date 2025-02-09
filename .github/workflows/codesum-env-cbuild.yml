@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - containers/codesum-env/Dockerfile
+      - containers/codesum-env/requirements.txt
       - .github/workflows/codesum-env-cbuild.yml # Self-trigger
 
 env:
