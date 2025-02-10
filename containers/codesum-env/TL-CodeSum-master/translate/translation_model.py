@@ -297,11 +297,13 @@ class TranslationModel:
             filenames = [self.filenames.test]
 
         # convert `output` into a list, for zip
+        print(output)
         if isinstance(output, str):
             output = [output]
         elif output is None:
             output = [None] * len(filenames)
-
+        print(output)
+        
         scores = []
         new_lines = []
         for filenames_, output_, prefix in zip(filenames, output, self.dev_prefix):  # evaluation on multiple corpora
