@@ -102,7 +102,7 @@ post_process_script: null # path to post-processing script (called before evalua
 remove_unk: False        # remove UNK symbols from the decoder output
 beam_size: 2             # beam size for decoding (decoder is greedy by default)
 ensemble: False          # use an ensemble of models while decoding (specified by the --checkpoints parameter)
-output: null             # output file for decoding (writes to standard output by default)
+output: ../preds/results.txt            # output file for decoding (writes to standard output by default)
 len_normalization: 1.0   # length normalization coefficient used in beam-search decoder
 early_stopping: True     # reduce beam-size each time a finished hypothesis is encountered (affects decoding speed)
 raw_output: False        # output translation hypotheses without any post-processing
