@@ -11,8 +11,8 @@ min_learning_rate: 0.000001 # stop training when learning rate is smaller than t
 
 # training parameters
 max_gradient_norm: 5.0   # clip gradients to this norm (prevents exploding gradient)
-steps_per_checkpoint: 20   # number of SGD updates between each checkpoint
-steps_per_eval: 20    # number of SGD updates between each BLEU eval (on dev set)
+steps_per_checkpoint: 1000   # number of SGD updates between each checkpoint
+steps_per_eval: 1000    # number of SGD updates between each BLEU eval (on dev set)
 eval_burn_in: 0          # minimum number of updates before starting BLEU eval
 max_steps: 1000             # maximum number of updates before stopping
 max_epochs: 5            # maximum number of epochs before stopping
