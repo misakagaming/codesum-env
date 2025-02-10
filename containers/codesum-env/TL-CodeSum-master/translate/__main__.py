@@ -315,7 +315,7 @@ def main(args=None):
         elif args.decode is not None:
             model.decode(**config)
         elif args.eval is not None:
-            model.evaluate(on_dev=True, **config)
+            model.evaluate(on_dev=True, output="../preds/results.txt" **config)
         elif args.align is not None:
             model.align(**config)
         elif args.train:
