@@ -242,7 +242,7 @@ class TranslationModel:
         # assert len(self.src_ext) == 1 or self.filenames.test
         # check that there is the right number of files for decoding
         # assert not self.filenames.test or len(self.filenames.test) == len(self.src_ext)
-
+        print(output)
         output_file = None
         try:
             output_file = sys.stdout if output is None else open(output, 'w')
@@ -303,7 +303,6 @@ class TranslationModel:
         elif output is None:
             output = [None] * len(filenames)
         print(output)
-        
         scores = []
         new_lines = []
         for filenames_, output_, prefix in zip(filenames, output, self.dev_prefix):  # evaluation on multiple corpora
