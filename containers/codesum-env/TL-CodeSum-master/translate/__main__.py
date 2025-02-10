@@ -146,6 +146,9 @@ def main(args=None):
    
     if args.crash_test:
         config.max_train_size = 0
+        
+    
+    print(f"\noutput file: {config.output}")
 
     if not config.debug:
         os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # disable TensorFlow's debugging logs
