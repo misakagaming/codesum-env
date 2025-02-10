@@ -16,8 +16,6 @@ def nltk_corpus_bleu(hypotheses, references, order=4):
     for hyp, ref in zip(hypotheses, references):
         hyp = hyp.split()
         ref = ref.split()
-        hyp.append("a")
-        ref.append("a")
         refs.append([ref])
 
 
